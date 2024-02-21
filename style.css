@@ -1,18 +1,1 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
 
-}
-.nav-width{
-    width: 80vw !important ;
-    margin: 20px;
-
-}
-.section1 {
-    background-image: url(images/hero-bg.jpg);
-    color: red; 
-    display: flex;
-}
