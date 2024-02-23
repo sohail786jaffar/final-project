@@ -28,8 +28,22 @@
     justify-content: center;
     align-items: center;
    color: hsl(23, 49%, 82%);
-   
+   position: relative;
 }
+/* .section-1::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url("images/hero-bg-shape.png");
+    position: absolute;
+    top: 0;
+    left: 0;
+   
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    z-index: 1;
+} */
 .container{
     display: flex;
     justify-content: center;
@@ -49,19 +63,28 @@
 }
 .section1-div-2{
     position: relative;
+   
 }
 .container img{
     display: none;
     min-width: 300px;
     max-width: 80%;
-    
+    z-index: 4;
     
 }
+ 
 .section1-div-2 .back-img {
     position: absolute;
     top: 0;
     transform: scale(1.2);
+  
 }
+/* .section1-div-2 .front-img {
+    position: absolute;
+    top: 97px;
+    transform: scale(1.2);
+  
+} */
 .font{
     color: hsl(28, 100%, 58%);
     margin-bottom: 35px;
@@ -177,4 +200,29 @@ height: auto;
 
 .section-3{
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    background-image: url(images/hero-bg.jpg);
+    padding: 6rem 0;
+}
+.section-3 h1{
+    font-size: 3.2rem;
+}
+.section-3-container-1{
+    max-width: 534px;
+    min-width: 534px;
+    position: relative;
+}
+.section-3-container-2{
+    /* max-width: 450px; */
+    position: relative;
+}
+.section-3-banner{
+    width: 100%;
+}
+.float-ani{
+    position: absolute;
+    top: 0;
+    left: -30px;
 }
