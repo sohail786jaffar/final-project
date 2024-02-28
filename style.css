@@ -45,6 +45,10 @@ img {
 }
 .header-bg{
   background-color: rgb(123, 14, 19);
+  position: fixed;
+  top: 0px;
+  z-index: 40;
+  width: 100vw;
 }
 header {
   min-height: 76px;
@@ -55,6 +59,7 @@ header {
   padding: 0 3rem ;
   max-width: 1200px;
   margin-inline: auto;
+  
 }
 .header-title-line{
   display: flex;
@@ -131,13 +136,13 @@ nav ul button {
     z-index: 12121234;
   
   }
-  :is(.menu-button:hover, .menu-button:focus) .menu-icon {
+  :is(header:hover, header:focus) .menu-icon {
     background-color: transparent;
   }
-  :is(.menu-button:hover, .menu-button:focus) .menu-icon::after {
+  :is(header:hover, header:focus) .menu-icon::after {
     transform: translatex(-18px) rotate(45deg);
   }
-  :is(.menu-button:hover, .menu-button:focus) .menu-icon::before {
+  :is(header:hover, header:focus) .menu-icon::before {
     transform: translatex(-18px) rotate(-45deg);
   }
   :is(header:hover, header:focus) nav {
@@ -197,7 +202,11 @@ nav ul button {
     gap: 1.5rem;
     flex-wrap: nowrap;
   }
-
+@media screen and (max-width:550px){
+  nav{
+    width: 85%;
+  }
+}
   /* hamburger-menu------ */
 
   .menu-button {
