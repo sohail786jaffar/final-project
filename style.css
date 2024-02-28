@@ -17,17 +17,156 @@ body {
 img {
   display: block;
 }
-.nav {
-  height: 86px;
+
+/* header--------------------------------> */
+
+.right {
+  display: none;
+}
+header {
+  min-height: 86px;
   width: 100%;
   border-bottom: 1px solid black;
   background-image: url(images/hero-bg.jpg);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem;
 }
+nav {
+  margin-block: auto;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+  font-size: 1rem;
+}
+nav ul a {
+  color: aliceblue;
+}
+nav ul button {
+  margin: 0 !important;
+  font-size: 1rem;
+  padding: 0.5rem 0.7rem !important;
+}
+@media screen and (max-width:500px){
+    .d-none-sm{
+        display: none;
+    }
+    
+}
+@media screen and (max-width: 851px) {
+  .reservation-btn button {
+    margin: 0 auto !important;
+    font-size: 1rem;
+    padding: 0.5rem 0.7rem !important;
+  }
+  .reservation-btn {
+    margin-top: 7px;
+  }
+  .d-none {
+    display: none;
+  }
+  .reservation-btn > * {
+    margin-right: 1rem;
+  }
+  .header-title-line {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 12121234;
+  }
+  :is(.menu-button:hover, .menu-button:focus) .menu-icon {
+    background-color: transparent;
+  }
+  :is(.menu-button:hover, .menu-button:focus) .menu-icon::after {
+    transform: translatex(-18px) rotate(45deg);
+  }
+  :is(.menu-button:hover, .menu-button:focus) .menu-icon::before {
+    transform: translatex(-18px) rotate(-45deg);
+  }
+  :is(header:hover, header:focus) nav {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    transform-origin: top center;
+    animation: showMenu 0.5s ease forwards;
+  }
+  @keyframes showMenu {
+    0% {
+      transform: scaley(0);
+    }
+    80% {
+      transform: scaley(1.2);
+    }
+    100% {
+      transform: scaley(1);
+    }
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  .header-title-line {
+    display: flex;
+  }
+
+  .right {
+    display: block;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+  }
+
+  /* hamburger-menu------ */
+
+  .menu-button {
+    background-color: transparent;
+    width: 36px;
+    height: 36px;
+    border: none;
+    position: relative;
+    margin-top: 9px;
+  }
+  .search {
+    position: relative;
+    top: 9px;
+  }
+  .menu-icon,
+  .menu-icon::after,
+  .menu-icon::before {
+    width: 36px;
+    height: 5px;
+    background-color: rgb(245, 239, 239);
+    border-radius: 5px;
+    position: absolute;
+    transition: all 0.5s ease;
+  }
+  .menu-icon::after {
+    content: "";
+    transform: translate(-18px, -12px);
+  }
+  .menu-icon::before {
+    content: "";
+    transform: translate(-18px, 12px);
+  }
+}
+
+/* section 1--------------------------------> */
 .section-1 {
   background-image: url(images/hero-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
+  position: relative;
 }
 .section-1-inner {
   color: rgb(255, 247, 247);
@@ -82,21 +221,15 @@ img {
 .section1-div-2 .back-img {
   position: absolute;
   top: -2rem;
-  left: -5rem;
+
   transform: scale(1.2);
   z-index: 1;
 }
 .section1-div-2 .front-img {
   position: relative;
-  left: -7rem;
+
   z-index: 2;
 }
-/* .section1-div-2 .front-img {
-    position: absolute;
-    top: 97px;
-    transform: scale(1.2);
-  
-} */
 .font {
   color: hsl(28, 100%, 58%);
   margin-bottom: 35px;
@@ -141,6 +274,19 @@ img {
   clip-path: circle(100%);
 }
 
+@media screen and (max-width: 540px) {
+  .section1-div-1 {
+    padding: 1rem;
+    min-width: 370px;
+  }
+  .container {
+    width: 100%;
+  }
+  .section1-div-1 h1 {
+    font-size: 2rem !important;
+    font-weight: 600;
+  }
+}
 @media screen and (min-width: 770px) {
   .container img {
     display: block;
@@ -158,25 +304,16 @@ img {
     font-size: 3rem;
   }
 }
-@media screen and (max-width: 540px) {
-  .section1-div-1 {
-    padding: 1rem;
-    min-width: 370px;
-  }
+
+@media screen and (max-width: 992px) {
   .container {
-    width: 100%;
-  }
-  .section1-div-1 h1 {
-    font-size: 2.5rem;
-  }
-}
-@media screen and (min-width: 992px) {
-  .section1-div-1 {
-    min-width: 600px;
+    width: 93%;
+    max-width: 900px;
+    padding: 0;
   }
 
   .section1-div-1 h1 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -213,7 +350,7 @@ img {
   bottom: 0;
   left: 0;
   z-index: -1;
-  clip-path: circle(38.6% at 50% 92%);
+  clip-path: circle(41.6% at 50% 100%);
 
   transition: all 0.5s;
 }
@@ -276,7 +413,7 @@ img {
   margin: 1rem;
 }
 .section-3 h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: aliceblue;
   max-width: 18ch;
   line-height: 1.2;
@@ -352,16 +489,12 @@ img {
   .section-3 h2 {
     margin-inline: 0;
   }
-  /* .inner  {
-        text-align: left;
-        padding-top: 1rem;
-        font-size: 1rem;
-        flex-direction: column;
-      } */
+
   .section-3-container-1 {
     text-align: left;
   }
 }
+
 @media screen and (max-width: 500px) {
   .innersection-3-para {
     font-size: 1rem;
@@ -373,7 +506,11 @@ img {
     font-size: 1rem;
   }
 }
-
+@media screen and (min-width: 500px) {
+  .section-3 h2 {
+    font-size: 2.5rem;
+  }
+}
 /* section---------------------------------------4 */
 .section-4 {
   padding: 1rem 1rem;
@@ -538,22 +675,22 @@ footer {
 .footer-bottom {
   text-align: center;
   border-top: 1px solid black;
-  width: 90%;
+  width: 100%;
 }
 footer::after {
-  content:url(images/delivery-boy.svg);
+  content: url(images/delivery-boy.svg);
   position: absolute;
   bottom: 0;
   width: 160px;
   animation: cycling 20s linear infinite;
 }
 @keyframes cycling {
-    0%{
-        left: -160px;
-    }
-    100%{
-        left: 100%;
-    }
+  0% {
+    left: -160px;
+  }
+  100% {
+    left: 100%;
+  }
 }
 @media screen and (min-width: 550px) {
   .footer {
